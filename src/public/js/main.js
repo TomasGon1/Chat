@@ -8,7 +8,7 @@ let user;
 const chatBox = document.getElementById("chatBox");
 
 //Usamos el objeto Swal.
-//El metodo es fire.
+//El método es fire.
 
 Swal.fire({
   title: "Identificate",
@@ -25,8 +25,8 @@ Swal.fire({
 
 chatBox.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
-    if (chatBox.value.trim().lenght > 0) {
-      //trim no permite sacar los espacios en blanco al principio y al final de un string
+    if (chatBox.value.trim().length > 0) {
+      //trim nos permite sacar los espacios en blanco al principio y al final de un string.
       //Si el mensaje tiene mas de 0 caracteres, lo enviamos al servidor.
       socket.emit("message", { user: user, message: chatBox.value });
       chatBox.value = "";
@@ -34,7 +34,7 @@ chatBox.addEventListener("keyup", (event) => {
   }
 });
 
-//Listener de mensajes:
+//Listener de Mensajes:
 
 socket.on("messagesLogs", (data) => {
   let log = document.getElementById("messagesLogs");
